@@ -1,0 +1,137 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background: rgb(34,34,34);
+  color: #eee;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.bg {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background: -moz-linear-gradient(to top right, rgba(11,11,11,1), rgba(34, 34, 34, 1), rgba(86,62,77,1), rgba(68,37,34,1));
+  background: -webkit-linear-gradient(to top right, rgba(11,11,11,1), rgba(34, 34, 34, 1), rgba(86,62,77,1), rgba(68,37,34,1));
+  background: linear-gradient(to top right, rgba(11,11,11,1), rgba(34, 34, 34, 1), rgba(60,48,56,1), rgba(51,35,34,1));
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#222222",endColorstr="#652821",GradientType=1);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #000;
+  border: 3px solid transparent;
+  background-clip: content-box;
+}
+::-webkit-scrollbar-thumb {
+  background: #666;
+  border-top: 20px;
+  border-radius: 15px;
+  filter: drop-shadow(0 0 2em #000);
+}
+::-webkit-scrollbar-thumb:hover{
+  background: #555;
+}
+
+ol.nav {
+  flex: 0 0 140px;
+  font-family: 'papyrus', 'Papyrus', 'Garamond', Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  list-style: none;
+  margin: 5px -15px 5px 5px;
+  padding: 1vh 0 0 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  position: fixed;
+  height: 100vh;
+  z-index: 10;
+  background: linear-gradient(180deg, #2b1a1a, #3a2a2a);
+  border-right: 3px solid rgba(255, 223, 186, 0.2);
+  box-shadow: 4px 0 10px rgba(0, 0, 0, 0.5);
+}
+
+ol.nav > li {
+  padding: 0 0.5rem;
+  margin: 3px 7px;
+  border-radius: 6px;
+  transition: box-shadow 200ms ease-in-out, transform 200ms ease-in-out, color 200ms ease-in-out;
+}
+
+.nav a {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  color: #eee;
+  font-weight: bold;
+  /*padding: 0.5rem;*/
+  border-radius: 6px;
+  transition: color 200ms ease-in-out;
+}
+
+.nav a:hover {
+  text-decoration: none;
+  box-shadow: none;
+  color: #fff;
+}
+
+.nav > li:hover {
+  text-decoration: none;
+  box-shadow: 0 0 10px rgba(255, 223, 186, 0.4);
+  transform: scale(1.05);
+  color: #fff;
+}
+
+.nav > li.townsfolk {
+  background: rgba(31, 101, 255, 0.35);
+  box-shadow: 0 0 10px rgba(31, 101, 255, 0.3);
+}
+.nav > li.outsider {
+  background: rgba(70, 213, 255, 0.35);
+  box-shadow: 0 0 10px rgba(70, 213, 255, 0.3);
+}
+
+.nav > li.minion {
+  background: rgba(255, 105, 0, 0.35);
+  box-shadow: 0 0 10px rgba(255, 105, 0, 0.3);
+}
+
+.nav > li.demon {
+  background: rgba(206, 1, 0, 0.35);
+  box-shadow: 0 0 15px rgba(206, 1, 0, 0.4);
+}
+
+@media only screen and (max-width: 650px) {
+  ol.nav {
+    overflow-x: auto;
+    overflow-y: hidden;
+    width: 100%;
+    display: flex;
+    height: unset;
+    margin: 0;
+    padding: 0.5rem 0;
+    border-bottom: 3px solid rgba(255, 223, 186, 0.2);
+    border-right: none;
+    box-shadow: none;
+  }
+  
+  .nav li {
+    flex: 1 0 auto;
+    margin: 0 5px;
+  }
+
+  .nav a {
+    padding: 0.2rem 0.75rem;
+  }
+}
+
+@font-face{
+  font-family:'papyrus';
+  src: url('https://alfuwu.github.io/Images/papyrus.woff') format('woff'),
+    url('https://alfuwu.github.io/Images/papyrus.ttf') format('truetype');
+}
