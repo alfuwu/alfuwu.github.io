@@ -1,137 +1,179 @@
+:root {
+  --bg: #0b0d12;
+  --panel: rgba(255, 255, 255, 0.06);
+  --border: rgba(255, 255, 255, 0.12);
+  --accent: #7c7cff;
+  --accent-2: #44ffd2;
+  --text: #e6e8ee;
+  --muted: #a6a8b3;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 body {
-  font-family: Arial, sans-serif;
   margin: 0;
-  padding: 0;
-  width: 100%;
-  height: 100%;
-  background: rgb(34,34,34);
-  color: #eee;
+  background: radial-gradient(circle at top, #131629, var(--bg));
+  color: var(--text);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.6;
+}
+
+header {
+  padding: 5rem 2rem 4rem;
+  text-align: center;
+}
+
+header h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  margin: 0;
+  letter-spacing: 0.05em;
+}
+
+header p {
+  max-width: 900px;
+  margin: 1.5rem auto 0;
+  color: var(--muted);
+  font-size: 1.1rem;
+}
+
+section {
+  padding: 4rem 2rem;
+  max-width: 1400px;
+  margin: auto;
+}
+
+section h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  border-left: 4px solid var(--accent);
+  padding-left: 1rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 2rem;
+}
+
+.card {
+  background: var(--panel);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-.bg {
-  position: fixed;
-  width: 100vw;
-  height: 100vh;
-  background: -moz-linear-gradient(to top right, rgba(11,11,11,1), rgba(34, 34, 34, 1), rgba(86,62,77,1), rgba(68,37,34,1));
-  background: -webkit-linear-gradient(to top right, rgba(11,11,11,1), rgba(34, 34, 34, 1), rgba(86,62,77,1), rgba(68,37,34,1));
-  background: linear-gradient(to top right, rgba(11,11,11,1), rgba(34, 34, 34, 1), rgba(60,48,56,1), rgba(51,35,34,1));
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#222222",endColorstr="#652821",GradientType=1);
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.4);
 }
 
-::-webkit-scrollbar {
-  width: 10px;
-}
-::-webkit-scrollbar-track {
-  background: #000;
-  border: 3px solid transparent;
-  background-clip: content-box;
-}
-::-webkit-scrollbar-thumb {
-  background: #666;
-  border-top: 20px;
-  border-radius: 15px;
-  filter: drop-shadow(0 0 2em #000);
-}
-::-webkit-scrollbar-thumb:hover{
-  background: #555;
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  filter: saturate(1.1);
 }
 
-ol.nav {
-  flex: 0 0 140px;
-  font-family: 'papyrus', 'Papyrus', 'Garamond', Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  font-size: 16px;
-  list-style: none;
-  margin: 5px -15px 5px 5px;
-  padding: 1vh 0 0 0;
-  overflow-x: hidden;
-  overflow-y: auto;
-  position: fixed;
-  height: 100vh;
-  z-index: 10;
-  background: linear-gradient(180deg, #2b1a1a, #3a2a2a);
-  border-right: 3px solid rgba(255, 223, 186, 0.2);
-  box-shadow: 4px 0 10px rgba(0, 0, 0, 0.5);
+.card-content {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  flex: 1;
 }
 
-ol.nav > li {
-  padding: 0 0.5rem;
-  margin: 3px 7px;
-  border-radius: 6px;
-  transition: box-shadow 200ms ease-in-out, transform 200ms ease-in-out, color 200ms ease-in-out;
+.card-content h3 {
+  margin: 0;
+  font-size: 1.25rem;
 }
 
-.nav a {
-  display: block;
+.card-content p {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.card-content a:first-of-type {
+  margin-top: auto;
+}
+
+.card-content a {
+  text-decoration: none;
+  color: var(--accent-2);
+  font-weight: 600;
+  transition: filter 0.2s ease;
+}
+
+.card-content a:hover {
+  text-decoration: underline;
+  filter: drop-shadow(0 0 0.5em #72b1Fc);
+}
+
+footer {
   text-align: center;
-  text-decoration: none;
-  color: #eee;
-  font-weight: bold;
-  /*padding: 0.5rem;*/
-  border-radius: 6px;
-  transition: color 200ms ease-in-out;
+  padding: 3rem 1rem;
+  color: var(--muted);
+  font-size: 0.9rem;
 }
 
-.nav a:hover {
-  text-decoration: none;
-  box-shadow: none;
-  color: #fff;
+.python-viewer {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 1.5rem;
 }
 
-.nav > li:hover {
-  text-decoration: none;
-  box-shadow: 0 0 10px rgba(255, 223, 186, 0.4);
-  transform: scale(1.05);
-  color: #fff;
+.python-sidebar, .python-main {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 1rem;
 }
 
-.nav > li.townsfolk {
-  background: rgba(31, 101, 255, 0.35);
-  box-shadow: 0 0 10px rgba(31, 101, 255, 0.3);
-}
-.nav > li.outsider {
-  background: rgba(70, 213, 255, 0.35);
-  box-shadow: 0 0 10px rgba(70, 213, 255, 0.3);
+.python-sidebar h3 {
+  margin-top: 0;
 }
 
-.nav > li.minion {
-  background: rgba(255, 105, 0, 0.35);
-  box-shadow: 0 0 10px rgba(255, 105, 0, 0.3);
+.python-sidebar button {
+  width: 100%;
+  background: none;
+  border: none;
+  color: var(--text);
+  padding: 0.5rem;
+  text-align: left;
+  cursor: pointer;
 }
 
-.nav > li.demon {
-  background: rgba(206, 1, 0, 0.35);
-  box-shadow: 0 0 15px rgba(206, 1, 0, 0.4);
+.python-sidebar button:hover {
+  background: rgba(255,255,255,0.05);
 }
 
-@media only screen and (max-width: 650px) {
-  ol.nav {
-    overflow-x: auto;
-    overflow-y: hidden;
-    width: 100%;
-    display: flex;
-    height: unset;
-    margin: 0;
-    padding: 0.5rem 0;
-    border-bottom: 3px solid rgba(255, 223, 186, 0.2);
-    border-right: none;
-    box-shadow: none;
-  }
-  
-  .nav li {
-    flex: 1 0 auto;
-    margin: 0 5px;
-  }
-
-  .nav a {
-    padding: 0.2rem 0.75rem;
-  }
+.file-list button {
+  font-size: 0.9rem;
+  color: var(--accent-2);
+  background: var(--accent-1);
 }
 
-@font-face{
-  font-family:'papyrus';
-  src: url('https://alfuwu.github.io/Images/papyrus.woff') format('woff'),
-    url('https://alfuwu.github.io/Images/papyrus.ttf') format('truetype');
+pre {
+  border-radius: 12px;
+  overflow-x: auto;
+  font-size: 0.85rem;
+  padding: 1rem;
+  max-width: 60vw;
+}
+
+hr {
+  border: 1px solid hsla(220, 19%, 40%, 0.2);
+  margin: 10px;
+  width: calc(100% - 20px);
+}
+
+.section-header {
+  font-weight: 700;
+  padding: 4px 8px;
+  font-size: 12px;
 }

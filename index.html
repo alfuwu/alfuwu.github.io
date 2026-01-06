@@ -1,18 +1,364 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta content="specil page ✨" property="og:title" />
-    <meta content="qpi wpi i give up" property="og:description" />
-    <meta content="https://alfuwu.github.io/" property="og:url" />
-    <meta content="https://avatars.githubusercontent.com/u/130256600?s=400&u=520a3dcd3a7a0c4eea08b138dd27b643107be786&v=4" property="og:image" />
-    <meta content="#FFAAAA" data-react-helmet="true" name="theme-color" />
-    <title>specil page ✨</title>
-    <link rel="stylesheet" href="styles.css" />
-    <link rel="icon" type="image/svg+xml" href="https://alfuwu.github.io/Images/newhyleusoutlined.svg" />
-</head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>special page ✨</title>
+<link rel="stylesheet" href="styles.css" />
+<link rel="icon" type="image/svg+xml" href="https://alfuwu.github.io/Images/newhyleusoutlined.svg" />
+
+<!-- Prism.js CSS for syntax highlighting -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.30.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+
+<!-- Prism.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.30.0/prism.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.30.0/components/prism-python.min.js"></script>
+
+<script>
+
+function loadProject(name) {
+  const fileList = document.getElementById("fileList");
+  const source = document.getElementById("sourceCode");
+  fileList.innerHTML = "";
+
+  fetch(name)
+    .then(response => response.text())
+    .then(data => {
+      source.textContent = data;
+      Prism.highlightElement(source);
+    });
+}
+</script>
+
 <body>
-    <header>wip</header>
-    <div class="bg"></div>
+
+<header>
+  <h1>special page ✨</h1>
+  <p>
+    This is a collection of the various programming projects and experiments I've made over the years.
+  </p>
+</header>
+
+<section>
+  <h2>Web & Platform Projects</h2>
+  <div class="grid">
+
+    <div class="card">
+      <img src="images/hyleus.png"
+           alt="Placeholder: Encrypted mini wiki interface" />
+      <div class="card-content">
+        <h3>Encrypted GitHub Pages Wiki</h3>
+        <p>
+          A statically hosted site with dynamically updateable content unlocked via
+          AES-256 decryption of a Personal Access Token.
+        </p>
+        <a href="https://github.com/alfuwu/Hyleus">View Repository</a>
+        <a href="https://alfuwu.github.io/Hyleus">View Page</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="images/harmony.png"
+           alt="Placeholder: Desktop messaging app" />
+      <div class="card-content">
+        <h3>Harmony (Tauri Desktop App)</h3>
+        <p>
+          A Discord-like real-time messaging desktop application paired
+          with a custom backend server.
+        </p>
+        <a href="https://github.com/alfuwu/Harmony">Client</a>
+        <a href="https://github.com/alfuwu/Harmony-Server">Server</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="images/thevault.png"
+           alt="Placeholder: Web messaging application" />
+      <div class="card-content">
+        <h3>The Vault</h3>
+        <p>
+          A small web application featuring user accounts, private messaging,
+          image sharing, public forum posting, and a clearance system.
+        </p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="images/monohyleus.png"
+           alt="Placeholder: A screenshot of a 2D pixel art game" />
+      <div class="card-content">
+        <h3>MonoHyleus</h3>
+        <p>
+          A prototype game written in MonoGame/C#, inspired by Terraria,
+          Minecraft, and Starbound. It lacks features, but a large portion of
+          the game's framework is implemented.
+        </p>
+        <a href="https://github.com/alfuwu/MonoHyleus">View Repository</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section>
+  <h2>Minecraft Mods & APIs</h2>
+  <div class="grid">
+
+    <div class="card">
+      <img src="images/zombification.png"
+           alt="Placeholder: Player zombification mechanic" />
+      <div class="card-content">
+        <h3>Zombification</h3>
+        <p>
+          Converts the player into a zombie when killed by one, mirroring villager mechanics.
+        </p>
+        <a href="https://github.com/alfuwu/zombificationem">View Repository</a>
+        <a href="https://modrinth.com/zombificationem">See it on Modrinth</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="images/cosmeticarmor.png"
+           alt="Placeholder: Cosmetic armor UI" />
+      <div class="card-content">
+        <h3>Cosmetic Armor</h3>
+        <p>
+          Adds cosmetic armor slots that affect appearance without altering stats.
+        </p>
+        <a href="https://github.com/alfuwu/cosmetic-armor">View Repository</a>
+        <a href="https://modrinth.com/armor-cosmetics">See it on Modrinth</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="images/mcai.png"
+           alt="Placeholder: AI dialogue in Minecraft" />
+      <div class="card-content">
+        <h3>MCAI</h3>
+        <p>
+          Integrates character.ai via an unofficial API to add AI-driven chatbots into Minecraft.
+        </p>
+        <a href="https://github.com/alfuwu/MCAI">View Repository</a>
+        <a href="https://modrinth.com/mcai">See it on Modrinth</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="images/backpacks.png"
+           alt="Placeholder: Backpacks" />
+      <div class="card-content">
+        <h3>Backpacks</h3>
+        <p>
+          Adds a backpack slot into the game, which gives the player an extended amount of inventory slots equal to the whatever tier backpack is inside the slot multiplied by 4.
+        </p>
+        <a href="https://github.com/alfuwu/backpacks">View Repository</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="images/playerweight.png"
+           alt="Placeholder: Player Weight mod in Minecraft" />
+      <div class="card-content">
+        <h3>Player Weight</h3>
+        <p>
+          Introduces Elder Scrolls-esque weight mechanics into the game, adding an additional challenge to inventory management on top of the rather limited amount of slots the player already has.
+        </p>
+        <a href="https://github.com/alfuwu/player-weight">View Repository</a>
+        <a href="https://modrinth.com/player-weight">See it on Modrinth</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="images/itemmodifiers.png"
+           alt="Placeholder: Item modifiers" />
+      <div class="card-content">
+        <h3>Item Modifiers</h3>
+        <p>
+          Attaches Terraria-inspired "prefixes" to tool and weapon items in Minecraft, changing certain attributes about them, for better or for worse.
+        </p>
+        <a href="https://github.com/alfuwu/item-modifiers">View Repository</a>
+        <a href="https://modrinth.com/item-modifiers">See it on Modrinth</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="images/aspects.png"
+           alt="Placeholder: Aspects" />
+      <div class="card-content">
+        <h3>Aspects</h3>
+        <p>
+          A simplistic mod that expands upon Minecraft's Fire Aspect enchantment, adding multiple different variations to spice up enchantment a bit.
+        </p>
+        <a href="https://github.com/alfuwu/aspects">View Repository</a>
+        <a href="https://modrinth.com/more-aspects">See it on Modrinth</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="images/fluidapi.png"
+           alt="Placeholder: Fluid API" />
+      <div class="card-content">
+        <h3>Fluid API</h3>
+        <p>
+          Attaches Terraria-inspired "prefixes" to tool and weapon items in Minecraft, changing certain attributes about them, for better or for worse.
+        </p>
+        <a href="https://github.com/alfuwu/fluid-api">View Repository</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="images/woodapi.png"
+           alt="Placeholder: Wood API" />
+      <div class="card-content">
+        <h3>Wood API</h3>
+        <p>
+          An API for Minecraft that makes adding entire new wood types as easy as a single line of code.
+        </p>
+        <a href="https://github.com/alfuwu/wood-api">View Repository</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section>
+  <h2>Terraria Mods</h2>
+  <div class="grid">
+
+    <div class="card">
+      <img src="images/persistentplayerposition.png" />
+      <div class="card-content">
+        <h3>PersistentPlayerPosition</h3>
+        <p>
+          Saves and restores the player's exact world position between sessions,
+          creating seamless continuity across play sessions.
+        </p>
+        <a href="https://github.com/alfuwu/PersistentPlayerPosition">View Repository</a>
+        <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3332031778">See it on Steam</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="images/dyeablelightpets.png" />
+      <div class="card-content">
+        <h3>DyeableLightPets</h3>
+        <p>
+          Light emitted by light pets dynamically changes color
+          based on applied dyes.
+        </p>
+        <a href="https://github.com/alfuwu/DyeableLightPets">View Repository</a>
+        <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3345031943">See it on Steam</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="images/daycounter.png" />
+      <div class="card-content">
+        <h3>DayCounter</h3>
+        <p>
+          A small Terraria mod that makes the light emitted from light pets
+          affected by their dye color.
+        </p>
+        <a href="https://github.com/alfuwu/DayCounter">View Repository</a>
+        <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3007797483">See it on Steam</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="images/zombieapocalypse.png" />
+      <div class="card-content">
+        <h3>ZombieApocalypse</h3>
+        <p>
+          Expands zombie variety, increases spawn rates,
+          and converts the player into a zombie upon death.
+        </p>
+        <a href="https://github.com/alfuwu/ZombieApocalypse">View Repository</a>
+        <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3343751748">See it on Steam</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="images/comicallylargeterraria.png" />
+      <div class="card-content">
+        <h3>ComicallyLargeTerraria</h3>
+        <p>
+          A basic mod that adds a single prefix modifier to the game: "Comically Large,"
+          which, as the name implies, makes all items with the prefix absurdly large.
+        </p>
+        <a href="https://github.com/alfuwu/ComicallyLargeTerraria">View Repository</a>
+        <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3007902948">See it on Steam</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="images/soulweapons.png" />
+      <div class="card-content">
+        <h3>SoulWeapons</h3>
+        <p>
+          Prototype system for procedurally generated weapons
+          with varied stats and behaviors.
+        </p>
+        <a href="https://github.com/alfuwu/SoulWeapons">View Repository</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="images/thefloorislava.png" />
+      <div class="card-content">
+        <h3>FloorIsLava</h3>
+        <p>
+          Reworks core movement mechanics so touching the ground instantly kills the player,
+          forcing aerial traversal using grappling hooks.
+        </p>
+        <a href="https://github.com/alfuwu/FloorIsLava">View Repository</a>
+        <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3343963894">See it on Steam</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section>
+  <h2>Python Source Explorer</h2>
+
+  <div class="python-viewer">
+    <div class="python-sidebar">
+      <h3>Projects</h3>
+      <div class="section-header">DISCORD BOTS</div>
+      <button onclick="loadProject('python/contore.py')">Contore</button>
+      <button onclick="loadProject('python/ermboard.py')">Ermboard</button>
+      <button onclick="loadProject('python/c.ai.py')">C.AI Integration</button>
+      <hr>
+      <div class="section-header">MACHINE LEARNING</div>
+      <button onclick="loadProject('python/gender_classification.py')">Gender Classification</button>
+      <button onclick="loadProject('python/discord_models.py')">Discord Models</button>
+      <button onclick="loadProject('python/phoneticizer.py')">Phoneticizer</button>
+      <button onclick="loadProject('python/sentiment_analysis.py')">Sentiment Analysis</button>
+      <hr>
+      <div class="section-header">NAME GENERATION</div>
+      <button onclick="loadProject('python/character_by_character.py')">Character-by-Character (ML)</button>
+      <button onclick="loadProject('python/sonority.py')">Sonority</button>
+      <button onclick="loadProject('python/procedural.py')">Procedural</button>
+      <hr>
+      <div class="section-header">MISC</div>
+      <button onclick="loadProject('python/pgn_to_uci.py')">PGN to UCI Converter</button>
+      <button onclick="loadProject('python/stt_tts_voice_changer.py')">STT-TTS Voice Changer</button>
+      <button onclick="loadProject('python/special_cipher.py')">Special Cipher</button>
+      <button onclick="loadProject('python/discord_eternalizer.py')">Discord Eternalizer</button>
+      <button onclick="loadProject('python/discord_serialization.py')">Discord Serializer</button>
+    </div>
+
+    <div class="python-main">
+      <div class="file-list" id="fileList"></div>
+      <pre><code class="language-python" id="sourceCode">Select a project to view its source.</code></pre>
+    </div>
+  </div>
+
+</section>
+
+<footer>
+  my things
+</footer>
+
 </body>
 </html>
